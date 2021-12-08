@@ -45,43 +45,13 @@
               <a class="nav-link" href="{{ url_for('add') }}">Add</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
+{% block content %}
 
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('{{ url_for('static', filename='post-bg.jpg') }}')">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-heading">
-              <h1>{{ post.title }}</h1>
-              <h2 class="subheading">{{ post.subtitle }}</h2>
-              <span class="meta">Posted by
-                {{ post.author }}
-                on {{ post.date_posted.strftime('%d, %B, %Y') }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Post Content -->
-    <article>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            {{ post.content|safe }}
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <hr>
-
+{% endblock %}
     <!-- Footer -->
     <footer>
       <div class="container">
