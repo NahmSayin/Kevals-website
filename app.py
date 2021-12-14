@@ -9,13 +9,15 @@ load_dotenv()
 
 app = Flask(__name__)
 
-dbName = 'blog.db'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+if app.config['SECRET_KEY'] is None:
+    raise RuntimeError("SECRET_KEY is not set")
 
 # for securing cookies and session data + creating database
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'SQLALCHEMY_DATABASE_URI'
-)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+if app.config['SQLALCHEMY_DATABASE_URI'] is None:
+    raise RuntimeError("SQLALCHEMY_DATABASE_URI is not set")
+
 # this suppresses event system warning
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
