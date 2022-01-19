@@ -1,6 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-<!--contact form-->
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='about-bg.jpg') }}')">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="page-heading">
+                <h1>Contact</h1>
+                <span class="subheading">For all enquires, please reach out to us using the details below.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+          <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Mobile: +44XXXXXXXXXX </p>
+          <p>Twitter: twitter.com/XXXXXX </p>
+          <p>LinkedIn: linkedin.com/XXXXXX </p>
+          <p>Youtube: youtube.com/XXXXX </p>
+      </div>
+    </div>
+
+<hr>
+
+
 
 
 {% endblock %}
